@@ -4,7 +4,7 @@ const axiosInstance = axios.create({
   baseURL:
     import.meta.env.MODE === "development"
       ? "http://localhost:8000/api"
-      : "/api",
+      : "https://warmth-care-backend.vercel.app/api",
   withCredentials: true,
 });
 
