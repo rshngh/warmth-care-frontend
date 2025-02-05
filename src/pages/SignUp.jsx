@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 
 import womanHoldingTwoHearts from "../assets/womanHoldingTwoHearts.svg";
 import { useAuthStore } from "../store/useAuthStore";
+import axiosInstance from "../lib/axios";
 
 const SignUp = () => {
   const { authUser, signUp } = useAuthStore();
@@ -89,10 +90,7 @@ const SignUp = () => {
 
       const params = new URLSearchParams(formData);
       try {
-        const response = await axios.post(
-          "http://localhost:8000/api/user/signup",
-          params
-        );
+        const response = await axiosInstance.post("/user/signup", params);
         signUp(response.data);
 
         notifySuccess(
