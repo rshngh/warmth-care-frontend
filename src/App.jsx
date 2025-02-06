@@ -13,6 +13,7 @@ import { useLocation } from "react-router-dom";
 import { notifyWarn } from "./utils/notify";
 import NotFound from "./pages/NotFound";
 import axiosInstance from "./lib/axios";
+import Test from "./pages/Test";
 
 function App() {
   const { authUser, isCheckingAuth, checkAuth } = useAuthStore();
@@ -55,6 +56,7 @@ function App() {
             element={!authUser ? <SignUp /> : <Navigate to="/" />}
           />
           <Route path="logout" element={<Homepage />} />
+          <Route path="test" element={<Test />} />
 
           <Route path="*" element={<NotFound />} />
         </Route>
