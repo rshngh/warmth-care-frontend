@@ -213,7 +213,7 @@ const ChatPage = () => {
           loading...
         </div>
       ) : (
-        <div className="flex items-center justify-center pt-2  ">
+        <div className="h-screen flex items-center justify-center pt-2  ">
           <div className="bg-base-100 rounded-lg w-full max-w-6xl h-[calc(100vh-9rem)] ">
             <div className="flex flex-col-reverse h-full rounded-lg overflow-auto ">
               <ChatBox
@@ -241,7 +241,7 @@ const ChatPage = () => {
               )}
             </div>
           </div>
-          <form className="max-w-6xl m-auto absolute inset-x-0 bottom-0 flex justify-end input input-bordered pr-0">
+          <form className="max-w-6xl m-auto absolute inset-x-0 bottom-0 flex justify-end input input-bordered pr-0 mb-0 mt-4">
             <input
               type="text"
               placeholder="Type here"
