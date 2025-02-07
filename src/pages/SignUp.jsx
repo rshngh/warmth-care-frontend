@@ -78,16 +78,16 @@ const SignUp = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
     const isFormVerified = validateForm();
-
-    const formData = new FormData();
-    formData.append("name", userData.name);
-    formData.append("email", userData.email);
-    formData.append("password", userData.password);
-    formData.append("avatar", userData.avatar);
+    setIsLoading(true);
 
     if (isFormVerified) {
+      const formData = new FormData();
+      formData.append("name", userData.name);
+      formData.append("email", userData.email);
+      formData.append("password", userData.password);
+      formData.append("avatar", userData.avatar);
+
       const params = new URLSearchParams(formData);
       try {
         const response = await axiosInstance.post("/user/signup", params);
