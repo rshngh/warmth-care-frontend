@@ -239,24 +239,24 @@ const ChatPage = () => {
                   />
                 </svg>
               )}
-              <form className="max-w-6xl m-auto absolute inset-x-0 bottom-0 flex justify-end input input-bordered pr-0 mb-2">
-                <input
-                  type="text"
-                  placeholder="Type here"
-                  className=" w-full m-auto  "
-                  value={newMessage}
-                  onChange={(e) => setNewMessage(e.target.value)}
-                />
-                <button
-                  type="submit"
-                  className="btn btn-primary m-auto"
-                  disabled={!newMessage.trim()}
-                  onClick={(e) => sendMessage(e)}>
-                  Send
-                </button>
-              </form>
             </div>
           </div>
+          <form className="max-w-6xl m-auto absolute inset-x-0 bottom-0 flex justify-end input input-bordered pr-0 mb-2">
+            <input
+              type="text"
+              placeholder="Type here"
+              className=" w-full m-auto  "
+              value={newMessage}
+              onChange={(e) => setNewMessage(e.target.value)}
+            />
+            <button
+              type="submit"
+              className="btn btn-primary m-auto"
+              disabled={!newMessage.trim()}
+              onClick={(e) => sendMessage(e)}>
+              Send
+            </button>
+          </form>
         </div>
       )}
     </div>

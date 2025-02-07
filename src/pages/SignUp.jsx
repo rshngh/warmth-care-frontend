@@ -42,7 +42,7 @@ const SignUp = () => {
         formData
       );
       if (response.status === 200) {
-        setUserData({ ...userData, avatar: response.data.url });
+        setUserData({ ...userData, avatar: response.data.secure_url });
         notifySuccess("Profile picture uploaded successfully.");
       }
     } catch (error) {
