@@ -52,7 +52,32 @@ const SignUp = () => {
     }
   };
 
-  const validateForm = () => {
+  // const validateForm = () => {
+  //   if (!userData.name) {
+  //     return notifyError("Please enter name.");
+  //   }
+  //   if (!userData.email) {
+  //     return notifyError("Please enter email.");
+  //   }
+  //   if (!/\S+@\S+\.\S+/.test(userData.email)) {
+  //     return notifyError("Please enter valid email id.");
+  //   }
+  //   if (!userData.password) {
+  //     return notifyError("Please enter password.");
+  //   }
+  //   if (userData.password.length < 6) {
+  //     return notifyError("Password must be at least 6 characters.");
+  //   }
+
+  //   if (!userData.avatar) {
+  //     return notifyError("Please choose a profile picture.");
+  //   }
+
+  //   return true;
+  // };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
     if (!userData.name) {
       return notifyError("Please enter name.");
     }
@@ -73,38 +98,30 @@ const SignUp = () => {
       return notifyError("Please choose a profile picture.");
     }
 
-    return true;
-  };
-
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    const isFormVerified = validateForm();
     setIsLoading(true);
 
-    if (isFormVerified) {
-      const formData = new FormData();
-      formData.append("name", userData.name);
-      formData.append("email", userData.email);
-      formData.append("password", userData.password);
-      formData.append("avatar", userData.avatar);
+    const formData = new FormData();
+    formData.append("name", userData.name);
+    formData.append("email", userData.email);
+    formData.append("password", userData.password);
+    formData.append("avatar", userData.avatar);
 
-      const params = new URLSearchParams(formData);
-      try {
-        const response = await axiosInstance.post("/user/signup", params);
-        signUp(response.data);
+    const params = new URLSearchParams(formData);
+    try {
+      const response = await axiosInstance.post("/user/signup", params);
+      signUp(response.data);
 
-        notifySuccess(
-          `Congrats ${response.data.name}! Your account has been created successfully.`
-        );
-      } catch (error) {
-        if (error.message === "Network Error") {
-          notifyError(`${error.message}. Please retry after sometime.`);
-        } else {
-          notifyError(error.response.data.message);
-        }
-      } finally {
-        setIsLoading(false);
+      notifySuccess(
+        `Congrats ${response.data.name}! Your account has been created successfully.`
+      );
+    } catch (error) {
+      if (error.message === "Network Error") {
+        notifyError(`${error.message}. Please retry after sometime.`);
+      } else {
+        notifyError(error.response.data.message);
       }
+    } finally {
+      setIsLoading(false);
     }
 
     setIsLoading(false);
