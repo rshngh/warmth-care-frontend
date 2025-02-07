@@ -214,7 +214,7 @@ const ChatPage = () => {
         </div>
       ) : (
         <div className=" flex items-center justify-center pt-2  ">
-          <div className="bg-base-100 rounded-lg w-full max-w-6xl h-[calc(100vh-9rem)] ">
+          <div className="bg-base-100 rounded-lg w-full max-w-6xl h-[calc(100vh-12rem)] sm:h-[calc(100vh-9rem)]">
             <div className="flex flex-col-reverse h-full rounded-lg overflow-auto ">
               <ChatBox
                 authUser={authUser}
