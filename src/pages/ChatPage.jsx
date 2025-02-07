@@ -213,7 +213,7 @@ const ChatPage = () => {
           loading...
         </div>
       ) : (
-        <div className="h-screen flex items-center justify-center pt-2  ">
+        <div className="flex items-center justify-center pt-2  ">
           <div className="bg-base-100 rounded-lg w-full max-w-6xl h-[calc(100vh-9rem)] ">
             <div className="flex flex-col-reverse h-full rounded-lg overflow-auto ">
               <ChatBox
