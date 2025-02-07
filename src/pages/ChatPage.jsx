@@ -32,7 +32,7 @@ const ChatBox = ({
               To start a conversation choose from below options or type your own
               message...
             </h1>
-            <div className="flex overflow-x-auto mb-6 sm:mb-0">
+            <div className="flex overflow-x-auto">
               {messageSuggestions.map((suggestion) => {
                 return (
                   <div
