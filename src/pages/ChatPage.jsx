@@ -241,7 +241,7 @@ const ChatPage = () => {
               )}
             </div>
           </div>
-          <form className="max-w-6xl m-auto absolute inset-x-0 bottom-0 flex justify-end input input-bordered pr-0 mb-0 mt-4">
+          <form className="max-w-6xl m-auto absolute inset-x-0 bottom-0 flex justify-end input input-bordered pr-0 mb-2">
             <input
               type="text"
               placeholder="Type here"
