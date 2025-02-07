@@ -28,11 +28,11 @@ const ChatBox = ({
       <div className="">
         {chatHistory.length === 0 ? (
           <div className=" ">
-            <h1 className="  text-center mb-2">
+            <h1 className="  text-center m-2">
               To start a conversation choose from below options or type your own
               message...
             </h1>
-            <div className="flex overflow-x-auto">
+            <div className="flex overflow-x-auto mb-6 sm:mb-0">
               {messageSuggestions.map((suggestion) => {
                 return (
                   <div
@@ -213,7 +213,7 @@ const ChatPage = () => {
           loading...
         </div>
       ) : (
-        <div className="flex items-center justify-center pt-2  ">
+        <div className="h-screen flex items-center justify-center pt-2  ">
           <div className="bg-base-100 rounded-lg w-full max-w-6xl h-[calc(100vh-9rem)] ">
             <div className="flex flex-col-reverse h-full rounded-lg overflow-auto ">
               <ChatBox
