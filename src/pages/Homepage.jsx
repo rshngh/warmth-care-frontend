@@ -9,7 +9,7 @@ const PublicHomePage = () => {
   return (
     <>
       {/* section main starts */}
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero bg-base-200 h-[calc(100vh-10rem)]">
         <div className="hero-content text-center">
           <div className="max-w-md">
             <span className="badge badge-success mb-4">Warmth.Care</span>

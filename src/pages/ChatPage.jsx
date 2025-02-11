@@ -28,7 +28,7 @@ const ChatBox = ({
       <div className="">
         {chatHistory.length === 0 ? (
           <div className=" ">
-            <h1 className="  text-center">
+            <h1 className="text-center m-2">
               To start a conversation choose from below options or type your own
               message...
             </h1>
